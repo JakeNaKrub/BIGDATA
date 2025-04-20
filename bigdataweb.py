@@ -18,7 +18,7 @@ from datetime import datetime, timedelta
 def get_financial_metrics(ticker_symbol,currentprice):
     # Download stock data
     stock = yf.Ticker(ticker_symbol)
-    logging.info(stock)
+    logging.info(stock.history(period="1y"))
     # Get current date and historical dates
     end_date = datetime.now().replace(tzinfo=None)
     start_date_3m = (end_date - timedelta(days=90)).replace(tzinfo=None)
