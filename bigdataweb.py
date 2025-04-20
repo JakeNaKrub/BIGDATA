@@ -128,6 +128,7 @@ def load_stock_db():
     })
     data = data.sort_values(by='Date', ascending=False)
     data = data.drop_duplicates(subset='Symbol', keep='first')
+    print(data)
     return data
 
 # Find closest stocks based on parameter values
